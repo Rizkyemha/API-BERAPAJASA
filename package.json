@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.3.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.3.3",
+    "nanoid": "^3.3.4",
+    "webpack": "^5.82.1"
+  }
+}
