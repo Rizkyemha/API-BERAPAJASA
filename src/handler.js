@@ -1,4 +1,3 @@
-const datas = require('./data');
 const { 
     addUser_RequestBody,
     getUser_RequestParams,
@@ -63,7 +62,6 @@ const loginUser = async (request, h) => {
 const addUser = async (request, h) => {
     try {
         const user = await addUser_RequestBody(request.payload);
-        datas.push(user);
         const response = h.response({
             status: 'success',
             message: 'akun berhasil ditambahkan',
