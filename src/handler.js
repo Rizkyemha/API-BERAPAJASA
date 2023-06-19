@@ -13,6 +13,10 @@ const getUser = async (request, h) => {
         const filterJenis = request.query.jenis_loan;
         const filterLunas = request.query.status_lunas;
         const filter = async (user, filterJenis, status_lunas) => {
+            
+            if(filterJenis == '' && status_lunas == '') {
+                return user;
+            }
             if(filterJenis && status_lunas == '') {
                 user = await user.filter(obj => obj.jenis_loan === filterJenis);
                 return user;
@@ -21,7 +25,6 @@ const getUser = async (request, h) => {
                 user = await user.filter(obj => obj.status_lunas === Number(status_lunas));
                 return user;
             }
-            return user;
         }
         const loan = await filter(user, filterJenis, filterLunas);
         const response = h.response({
